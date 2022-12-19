@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import './Container.scss'
 import Scene from './Scene';
 
-import rotIcon from './assets/rotate-solid.svg';
+import rotIcon from '/rotate-solid.svg';
 
 function Container() {
 
@@ -27,7 +27,7 @@ function Container() {
   
         if (!offset[5] || offset[5] === '0)') {
 
-          container.style.transform = 'translateY(' + height + 'px)'
+          container.style.transform = 'translateY(' + '-' + height + 'px)'
 
         } else if (count === 4) {
           
@@ -38,7 +38,7 @@ function Container() {
 
           const newOffset = parseInt(offset[5].slice(0, -1)) - height
           container.style.transform = 'translateY(' + newOffset + 'px)';
-
+          
         }
   
       }, 2000)

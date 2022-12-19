@@ -3,16 +3,15 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, OrbitControls, Sparkles } from '@react-three/drei';
 import { useSpring, animated } from '@react-spring/three';
 
-useGLTF.preload('/box.glb');
-useGLTF.preload('/lid.glb');
+const url = window.location.href
 
 function Present(props) {
 
     const panRef = useRef();
 
-    const box = useGLTF('/box.glb');
-    const lid = useGLTF('/lid.glb');
-    const pan = useGLTF('/pan.glb');
+    const box = useGLTF( url + '/box.glb');
+    const lid = useGLTF( url +'/lid.glb');
+    const pan = useGLTF( url +'/pan.glb');
 
     box.materials.Base.transparent = true;
     box.materials.Ribbons.transparent = true;
@@ -135,6 +134,10 @@ function Present(props) {
         </group>
     )
 }
+
+useGLTF.preload( url +'/box.glb');
+useGLTF.preload( url +'/lid.glb');
+useGLTF.preload( url +'/pan.glb');
 
 function Scene() {
 

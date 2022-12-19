@@ -4,7 +4,7 @@ import Container from './Container'
 import './index.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Container />
-  </React.StrictMode>,
+  
+  <Container />
+  
 )
